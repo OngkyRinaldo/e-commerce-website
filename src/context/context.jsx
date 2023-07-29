@@ -1,5 +1,11 @@
 import { createContext, useEffect, useState } from 'react';
+import {
+    createUserDocumentFromAuth,
+    onAuthStateChangedListener,
+} from '../utils/firebase/firebase.utils';
+import PRODUCTS from '../shop-data.json';
 
+// cart context
 const addCartItem = (cartItems, productToAdd) => {
     const exisitingCartItem = cartItems.find(
         (cartItem) => cartItem.id === productToAdd.id
@@ -39,8 +45,15 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 
 const clearCartItem = (cartItems, cartItemToRemove) =>
     cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+// cart context
 
-export const CartContext = createContext({
+export const Context = createContext({
+    // userContextStart
+    currentUser: null,
+    setCurrentUser: () => null,
+    // userContextEnd
+
+    // cartContextStart
     isCartOpen: false,
     setIsCartOpen: () => {},
     cartItems: [],
@@ -49,9 +62,33 @@ export const CartContext = createContext({
     clearItemToCart: () => {},
     cartCount: 0,
     cartTotal: 0,
+
+    // cartContextEnd
+
+    // productContextStart
+    products: [],
+    // productContextEnd
 });
 
-export const CartProviver = ({ children }) => {
+export const ContextProvider = ({ children }) => {
+    // userProviderStart
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        const unsubcribe = onAuthStateChangedListener((user) => {
+            if (user) {
+                createUserDocumentFromAuth(user);
+            }
+            setCurrentUser(user);
+        });
+
+        return unsubcribe;
+    }, []);
+
+    // userProviderEnd
+
+    // cartProviderStart
+
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
@@ -87,7 +124,17 @@ export const CartProviver = ({ children }) => {
         setCartItems(clearCartItem(cartItems, cartItemToClear));
     };
 
+    // userProviderEnd
+
+    // productProviderStart
+
+    const [products, setProducts] = useState(PRODUCTS);
+
+    // productProviderEnd
+
     const value = {
+        currentUser,
+        setCurrentUser,
         isCartOpen,
         setIsCartOpen,
         addItemToCart,
@@ -96,8 +143,8 @@ export const CartProviver = ({ children }) => {
         cartItems,
         cartCount,
         cartTotal,
+        products,
     };
-    return (
-        <CartContext.Provider value={value}>{children} </CartContext.Provider>
-    );
+
+    return <Context.Provider value={value}>{children} </Context.Provider>;
 };

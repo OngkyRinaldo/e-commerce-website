@@ -30,12 +30,28 @@ header {
                 li {
                     list-style: none;
 
+                    span {
+                        text-decoration: none;
+                        font-size: $Link-Nav;
+                        font-weight: 600;
+                        color: $main;
+                        transition: 0.3s ease-in-out;
+                        text-transform: capitalize;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #17cf97;
+                        }
+                    }
+
                     a {
                         text-decoration: none;
                         font-size: $Link-Nav;
                         font-weight: 600;
                         color: $main;
                         transition: 0.3s ease-in-out;
+                        text-transform: capitalize;
+                        cursor: pointer;
 
                         &:hover,
                         &.active {

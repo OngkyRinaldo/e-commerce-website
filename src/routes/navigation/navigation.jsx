@@ -2,15 +2,14 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import './navigation.styles.scss';
 import { useContext, useState } from 'react';
-import { UserContext } from '../../context/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../component/cart-icon/cart-icon.component';
-import { CartContext } from '../../context/cart.context';
 import CartDropdown from '../../component/cart-dropdown/cart-dropdown.component';
+import { Context } from '../../context/context';
 
 const Navigation = () => {
-    const { currentUser } = useContext(UserContext);
-    const { isCartOpen } = useContext(CartContext);
+    const { currentUser } = useContext(Context);
+    const { isCartOpen } = useContext(Context);
 
     const [clicked, setClicked] = useState(false);
 
@@ -31,7 +30,7 @@ const Navigation = () => {
                         </li>
                         <li>
                             <NavLink className='nav-link' to='/shop'>
-                                Categories
+                                Shop
                             </NavLink>
                         </li>
                         <li>
@@ -40,11 +39,11 @@ const Navigation = () => {
                                     className='nav-link'
                                     onClick={signOutUser}
                                 >
-                                    SIGN OUT
+                                    Sign Out
                                 </span>
                             ) : (
                                 <NavLink className='nav-link' to='/auth'>
-                                    SIGN IN
+                                    Sign In
                                 </NavLink>
                             )}
                         </li>
@@ -52,23 +51,6 @@ const Navigation = () => {
                             <CartIcon />
                         </li>
                     </ul>
-                    {/* <NavLink className='nav-link' to='/'>
-                        Home
-                    </NavLink>
-                    <NavLink className='nav-link' to='/shop'>
-                        Categories
-                    </NavLink>
-                    {currentUser ? (
-                        <span className='nav-link' onClick={signOutUser}>
-                            SIGN OUT
-                        </span>
-                    ) : (
-                        <NavLink className='nav-link' to='/auth'>
-                            SIGN IN
-                        </NavLink>
-                    )}
-
-                    <CartIcon /> */}
                 </div>
 
                 {isCartOpen && <CartDropdown />}

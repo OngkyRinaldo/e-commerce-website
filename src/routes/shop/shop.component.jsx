@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import './shop.styles.scss';
-import { ProductContext } from '../../context/product.context';
 import ProductCard from '../../component/product-card/product-card.component';
+import { Context } from '../../context/context';
 
 const Shop = () => {
-    const { products } = useContext(ProductContext);
+    const { products } = useContext(Context);
     return (
         <div className='products-container'>
             {products.map((product) => (

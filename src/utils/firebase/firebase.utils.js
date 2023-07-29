@@ -11,12 +11,12 @@ import {
 import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCbAamvNm8f3CTsHmz2coQAU-Z6qPhBhkc',
-    authDomain: 'e-commerce-website-cbf50.firebaseapp.com',
-    projectId: 'e-commerce-website-cbf50',
-    storageBucket: 'e-commerce-website-cbf50.appspot.com',
-    messagingSenderId: '325868188227',
-    appId: '1:325868188227:web:cd8f7d6d31070ca9b59af6',
+    apiKey: 'AIzaSyChC6cTsNqJQMFjOVl4jchFCghk1GawySI',
+    authDomain: 'e-commerce-a80ef.firebaseapp.com',
+    projectId: 'e-commerce-a80ef',
+    storageBucket: 'e-commerce-a80ef.appspot.com',
+    messagingSenderId: '23749972569',
+    appId: '1:23749972569:web:34de234385234458c69748',
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

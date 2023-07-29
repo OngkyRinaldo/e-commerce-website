@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import './sign-in-form.styles.scss';
 import Button from '../button/button.component';
-import { getRedirectResult, signInWithEmailAndPassword } from 'firebase/auth';
+import { getRedirectResult } from 'firebase/auth';
 import {
     auth,
     signInWithGoogleRedirect,
+    signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
+import { useNavigate } from 'react-router-dom';
 
 const defaultFormFields = {
     email: '',
@@ -28,11 +30,19 @@ const SignInForm = () => {
         })();
     }, []);
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            const { user } = await signInWithEmailAndPassword(email, password);
+            const { user } = await signInAuthUserWithEmailAndPassword(
+                email,
+                password
+            );
+
+            alert('Login Success!');
+            navigate('/');
 
             resetFormFields();
         } catch (error) {
