@@ -1,4 +1,4 @@
-const SHOP_DATA = [
+const ProductsData = [
     {
         title: 'HATS',
         items: [
@@ -236,4 +236,4 @@ const SHOP_DATA = [
     },
 ];
 
-export default SHOP_DATA;
+export default ProductsData;
