@@ -2,8 +2,8 @@ import { createContext, useEffect, useState } from 'react';
 import {
     createUserDocumentFromAuth,
     onAuthStateChangedListener,
+    getCategoriesAndDocuments,
 } from '../utils/firebase/firebase.utils';
-import PRODUCTS from '../shop-data.json';
 
 // cart context
 const addCartItem = (cartItems, productToAdd) => {
@@ -66,7 +66,7 @@ export const Context = createContext({
     // cartContextEnd
 
     // productContextStart
-    products: [],
+    categoriesMap: {},
     // productContextEnd
 });
 
@@ -128,9 +128,22 @@ export const ContextProvider = ({ children }) => {
 
     // productProviderStart
 
-    const [products, setProducts] = useState(PRODUCTS);
+    const [categoriesMap, setCategoriesMap] = useState({});
+
+    useEffect(() => {
+        const getCategoriesMap = async () => {
+            const categoryMap = await getCategoriesAndDocuments('categories');
+            setCategoriesMap(categoryMap);
+        };
+
+        getCategoriesMap();
+    }, []);
 
     // productProviderEnd
+
+    // testdata start
+
+    // testdata End
 
     const value = {
         currentUser,
@@ -143,7 +156,7 @@ export const ContextProvider = ({ children }) => {
         cartItems,
         cartCount,
         cartTotal,
-        products,
+        categoriesMap,
     };
 
     return <Context.Provider value={value}>{children} </Context.Provider>;
