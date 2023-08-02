@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import FormInput from '../form-input/form-input.component';
 import './sign-in-form.styles.scss';
 import Button from '../button/button.component';
-import { getRedirectResult } from 'firebase/auth';
 import {
-    auth,
-    signInWithGoogleRedirect,
     signInAuthUserWithEmailAndPassword,
+    signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,13 +22,15 @@ const SignInForm = () => {
         setFormFields(defaultFormFields);
     };
 
-    useEffect(() => {
-        (async () => {
-            await getRedirectResult(auth);
-        })();
-    }, []);
-
     const navigate = useNavigate();
+
+    const signwinWithGoogle = async () => {
+        try {
+            await signInWithGooglePopup();
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -97,8 +97,8 @@ const SignInForm = () => {
                 <div className='buttons-container'>
                     <Button type='submit'>Sign In</Button>
                     <Button
-                        buttonType={'google'}
-                        onClick={signInWithGoogleRedirect}
+                        buttonType='google'
+                        onClick={signwinWithGoogle}
                         type='button'
                     >
                         Google sign In
