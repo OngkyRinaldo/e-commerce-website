@@ -6,10 +6,11 @@ import { Route, Routes } from 'react-router-dom';
 
 const Shop = () => {
     return (
-        <Routes>
-            <Route index element={<CategoriesPreview />} />
-            <Route path=':category' element={<Category />} />
-        </Routes>
+        <>shop page</>
+        // <Routes>
+        //     <Route index element={<CategoriesPreview />} />
+        //     <Route path=':category' element={<Category />} />
+        // </Routes>
     );
 };
 

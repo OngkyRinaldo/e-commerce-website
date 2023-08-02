@@ -130,9 +130,13 @@ export const ContextProvider = ({ children }) => {
 
     const [categoriesMap, setCategoriesMap] = useState({});
 
+    // useEffect(() => {
+    //     addCollectionAndDocuments('Products', SHOP_DATA);
+    // });
+
     useEffect(() => {
         const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments('categories');
+            const categoryMap = await getCategoriesAndDocuments('Products');
             setCategoriesMap(categoryMap);
         };
 
@@ -140,6 +144,8 @@ export const ContextProvider = ({ children }) => {
     }, []);
 
     // productProviderEnd
+
+    // heroImageEnd
 
     // testdata start
 

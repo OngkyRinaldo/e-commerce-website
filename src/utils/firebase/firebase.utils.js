@@ -60,7 +60,7 @@ export const addCollectionAndDocuments = async (
 };
 
 export const getCategoriesAndDocuments = async () => {
-    const collectionRef = collection(db, 'categories');
+    const collectionRef = collection(db, 'Products');
     const q = query(collectionRef);
 
     const querySnapshot = await getDocs(q);
