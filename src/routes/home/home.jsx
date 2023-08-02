@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import './home.styles.scss';
 import Hero from '../../component/hero/hero.component';
-=======
-import React from 'react';
-import Directory from '../../component/directory/directory.component';
->>>>>>> ee4a3fd790f10781d2aacd65e9c92401a7845c81
 
 const Home = () => {
     const categories = [
@@ -35,15 +30,9 @@ const Home = () => {
         },
     ];
     return (
-<<<<<<< HEAD
         <main>
             <Hero />
         </main>
-=======
-        <>
-            <Directory categories={categories} />
-        </>
->>>>>>> ee4a3fd790f10781d2aacd65e9c92401a7845c81
     );
 };
 

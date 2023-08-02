@@ -59,11 +59,8 @@ export const addCollectionAndDocuments = async (
 };
 
 export const getCategoriesAndDocuments = async () => {
-<<<<<<< HEAD
     const collectionRef = collection(db, 'Products');
-=======
-    const collectionRef = collection(db, 'products');
->>>>>>> ee4a3fd790f10781d2aacd65e9c92401a7845c81
+
     const q = query(collectionRef);
 
     const querySnapshot = await getDocs(q);
