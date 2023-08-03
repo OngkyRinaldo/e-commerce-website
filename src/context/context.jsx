@@ -64,10 +64,6 @@ export const Context = createContext({
     cartTotal: 0,
 
     // cartContextEnd
-
-    // productContextStart
-    categoriesMap: {},
-    // productContextEnd
 });
 
 export const ContextProvider = ({ children }) => {
@@ -126,31 +122,6 @@ export const ContextProvider = ({ children }) => {
 
     // userProviderEnd
 
-    // productProviderStart
-
-    const [categoriesMap, setCategoriesMap] = useState({});
-
-    // useEffect(() => {
-    //     addCollectionAndDocuments('Products', SHOP_DATA);
-    // });
-
-    useEffect(() => {
-        const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments('Products');
-            setCategoriesMap(categoryMap);
-        };
-
-        getCategoriesMap();
-    }, []);
-
-    // productProviderEnd
-
-    // heroImageEnd
-
-    // testdata start
-
-    // testdata End
-
     const value = {
         currentUser,
         setCurrentUser,
@@ -162,7 +133,6 @@ export const ContextProvider = ({ children }) => {
         cartItems,
         cartCount,
         cartTotal,
-        categoriesMap,
     };
 
     return <Context.Provider value={value}>{children} </Context.Provider>;

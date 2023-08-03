@@ -4,3 +4,12 @@ $Link-Nav: 20px;
 // color
 $main: #000;
 $white: #fff;
+
+//overlay
+$overlay-color: rgba(0, 0, 0, 0.3);
+$hover-overlay-color: rgba(0, 0, 0, 0.5);
+
+@mixin container() {
+    width: 85%;
+    margin: 0 auto;
+}

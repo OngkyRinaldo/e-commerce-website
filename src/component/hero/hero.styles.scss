@@ -1,9 +1,7 @@
-$overlay-color: rgba(0, 0, 0, 0.3);
-$hover-overlay-color: rgba(0, 0, 0, 0.5);
+@import '../../styles/variables';
 
 .home-container {
-    width: 85%;
-    margin: 0 auto;
+    @include container;
     padding-top: 1rem;
 
     .grid-container {
