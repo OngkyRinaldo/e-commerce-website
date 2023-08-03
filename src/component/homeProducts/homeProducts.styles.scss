@@ -1,0 +1,89 @@
+@import '../../styles/variables';
+
+.popular-container {
+    @include container;
+    padding: 5rem 0;
+
+    .popular-h2 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 3rem !important;
+    }
+
+    .container {
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+
+            .product {
+                outline: 2px solid rgba(0, 0, 0, 0.205);
+                outline-offset: -2px;
+                transition: all 0.15s ease-in;
+                cursor: pointer;
+
+                &:hover {
+                    outline: 2px solid rgba(0, 0, 0, 0.7);
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                .product-header {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .product-details {
+                    padding: 1rem;
+                    p {
+                        font-size: 17px;
+                    }
+
+                    .item-price {
+                        font-weight: 600;
+                        font-size: 22px;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 430px) {
+    .popular-container {
+        @include mobile;
+
+        .container {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 430px) and (max-width: 600px) {
+    .popular-container {
+        @include mobile;
+
+        .container {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+    .popular-container {
+        @include mobile;
+
+        .container {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}

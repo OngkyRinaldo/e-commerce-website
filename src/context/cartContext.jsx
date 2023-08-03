@@ -1,9 +1,4 @@
 import { createContext, useEffect, useState } from 'react';
-import {
-    createUserDocumentFromAuth,
-    onAuthStateChangedListener,
-    getCategoriesAndDocuments,
-} from '../utils/firebase/firebase.utils';
 
 // cart context
 const addCartItem = (cartItems, productToAdd) => {
@@ -47,12 +42,7 @@ const clearCartItem = (cartItems, cartItemToRemove) =>
     cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
 // cart context
 
-export const Context = createContext({
-    // userContextStart
-    currentUser: null,
-    setCurrentUser: () => null,
-    // userContextEnd
-
+export const CartContext = createContext({
     // cartContextStart
     isCartOpen: false,
     setIsCartOpen: () => {},
@@ -66,23 +56,7 @@ export const Context = createContext({
     // cartContextEnd
 });
 
-export const ContextProvider = ({ children }) => {
-    // userProviderStart
-    const [currentUser, setCurrentUser] = useState(null);
-
-    useEffect(() => {
-        const unsubcribe = onAuthStateChangedListener((user) => {
-            if (user) {
-                createUserDocumentFromAuth(user);
-            }
-            setCurrentUser(user);
-        });
-
-        return unsubcribe;
-    }, []);
-
-    // userProviderEnd
-
+export const CartProvider = ({ children }) => {
     // cartProviderStart
 
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -123,8 +97,6 @@ export const ContextProvider = ({ children }) => {
     // userProviderEnd
 
     const value = {
-        currentUser,
-        setCurrentUser,
         isCartOpen,
         setIsCartOpen,
         addItemToCart,
@@ -135,5 +107,7 @@ export const ContextProvider = ({ children }) => {
         cartTotal,
     };
 
-    return <Context.Provider value={value}>{children} </Context.Provider>;
+    return (
+        <CartContext.Provider value={value}>{children} </CartContext.Provider>
+    );
 };

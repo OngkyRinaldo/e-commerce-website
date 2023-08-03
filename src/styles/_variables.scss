@@ -13,3 +13,8 @@ $hover-overlay-color: rgba(0, 0, 0, 0.5);
     width: 85%;
     margin: 0 auto;
 }
+
+@mixin mobile() {
+    width: 100%;
+    margin: 0 auto;
+}

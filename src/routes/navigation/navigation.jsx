@@ -5,11 +5,12 @@ import { useContext, useState } from 'react';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../component/cart-icon/cart-icon.component';
 import CartDropdown from '../../component/cart-dropdown/cart-dropdown.component';
-import { Context } from '../../context/context';
+import { UserContext } from '../../context/userContext';
+import { CartContext } from '../../context/cartContext';
 
 const Navigation = () => {
-    const { currentUser } = useContext(Context);
-    const { isCartOpen } = useContext(Context);
+    const { currentUser } = useContext(UserContext);
+    const { isCartOpen } = useContext(CartContext);
 
     const [clicked, setClicked] = useState(false);
 

@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { Context } from '../../context/context';
 import CategoryPreview from '../../component/category-preview/category-preview.componetn';
+import { CartContext } from '../../context/cartContext';
 
 const CategoriesPreview = () => {
-    const { categoriesMap } = useContext(Context);
+    const { categoriesMap } = useContext(CartContext);
 
     return (
         <>
