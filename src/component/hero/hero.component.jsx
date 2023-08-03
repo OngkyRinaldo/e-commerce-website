@@ -1,7 +1,7 @@
-import Main1 from '../../assets/header/home-img-1.jpg';
-import Main2 from '../../assets/header/home-img-2.jpg';
-import Main3 from '../../assets/header/home-img-3.jpg';
-import Main4 from '../../assets/header/home-img-4.jpg';
+import Main1 from '../../assets/img/header/home-img-1.jpg';
+import Main2 from '../../assets/img/header/home-img-2.jpg';
+import Main3 from '../../assets/img/header/home-img-3.jpg';
+import Main4 from '../../assets/img/header/home-img-4.jpg';
 import { Link } from 'react-router-dom';
 import './hero.styles.scss';
 
