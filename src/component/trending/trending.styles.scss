@@ -1,0 +1,83 @@
+@import '../../styles/variables';
+.trending-container {
+    @include container;
+    padding-bottom: 10rem;
+
+    .title-btns {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 2rem !important;
+        }
+
+        .btns {
+            display: flex;
+            gap: 0.4rem;
+
+            button {
+                color: white;
+                background-color: #373737;
+                padding: 0.5rem;
+                font-size: 15px;
+                border: none;
+                height: 3rem;
+                width: 3rem;
+                cursor: pointer;
+                transition: all 0.1s ease-in;
+
+                &:hover {
+                    background-color: black;
+                }
+            }
+        }
+    }
+
+    .row-container {
+        display: flex;
+        gap: 2.2rem;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        scroll-behavior: smooth;
+        position: relative;
+        padding: 1rem 0.6rem;
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        .row-item {
+            a {
+                list-style: none;
+                text-decoration: none;
+                color: #000;
+            }
+
+            outline: 2px solid rgba(0, 0, 0, 0.205);
+            cursor: pointer;
+            transition: all 0.15s ease-in;
+
+            &:hover {
+                outline: 2px solid rgba(0, 0, 0, 0.6);
+            }
+
+            .item-header {
+                img {
+                    width: 11rem;
+                }
+            }
+
+            .item-description {
+                font-size: 17px;
+                padding: 1rem;
+            }
+        }
+    }
+}

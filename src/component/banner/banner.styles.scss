@@ -6,7 +6,7 @@
     .banner-container {
         display: flex;
         justify-content: space-between;
-        height: 40rem;
+        height: 25rem;
         overflow: hidden;
 
         .text-side {
@@ -73,9 +73,13 @@
     .banner {
         @include mobile;
         .banner-container {
-            height: 30rem;
+            // height: 20rem;
             .text-side {
                 width: 100%;
+                padding: 0 3rem;
+                h2 {
+                    font-size: 25px;
+                }
             }
 
             .img-side {

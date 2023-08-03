@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Products } from '../../data/ProductsData';
 
-const HomeItem = () => {
+const TrendingItem = () => {
     return (
         <>
-            {Products.slice(0, 8).map((item) => (
-                <div key={item.id} className='product normal'>
+            {Products.slice(9, 16).map((item) => (
+                <div key={item.id} className='row-item'>
                     <Link>
-                        <div className='product-header'>
+                        <div className='item-header'>
                             <img src={item.img} alt='products' />
                         </div>
-                        <div className='product-details'>
+                        <div className='item-description'>
                             <p>{item.description}</p>
                             <p className='item-price'>$ {item.price}</p>
                         </div>
@@ -21,4 +21,4 @@ const HomeItem = () => {
     );
 };
 
-export default HomeItem;
+export default TrendingItem;
