@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.container-not-found {
+    @include container;
+
+    background: #808080;
+    margin-top: 5rem;
+    .found-text {
+        text-align: center;
+        padding: 10rem 0;
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            font-size: 20px;
+            color: #000;
+            list-style: none;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+                color: aqua;
+                text-decoration: underline;
+            }
+        }
+    }
+}
