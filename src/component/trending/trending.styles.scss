@@ -1,6 +1,5 @@
 @import '../../styles/variables';
 .trending-container {
-    @include container;
     padding-bottom: 10rem;
 
     .title-btns {
@@ -74,9 +73,14 @@
                 }
             }
 
-            .item-description {
+            .item-title {
                 font-size: 17px;
                 padding: 1rem;
+
+                .item-price {
+                    padding-top: 10px;
+                    font-weight: 600;
+                }
             }
         }
     }

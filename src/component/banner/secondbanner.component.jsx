@@ -9,7 +9,7 @@ const SecondBanner = () => {
             <div className='banner-container-reverse'>
                 <div className='text-side'>
                     <div className='text'>
-                        <h2>Creative harmonious living</h2>
+                        <h2>Comfortable & Elegante Living</h2>
                         <p>
                             All Products are all made to standard sizes so that
                             you can mix and match them freely

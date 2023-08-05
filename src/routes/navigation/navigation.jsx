@@ -26,25 +26,25 @@ const Navigation = () => {
                     <div className='nav-links-container'>
                         <ul id='navbar2' className={clicked ? 'activeNav' : ''}>
                             <li>
-                                <NavLink className='nav-link' to='/'>
+                                <NavLink className='link' to='/'>
                                     Home
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink className='nav-link' to='/shop'>
-                                    Shop
+                                <NavLink className='link' to='/Categories'>
+                                    Categories
                                 </NavLink>
                             </li>
                             <li>
                                 {currentUser ? (
                                     <span
-                                        className='nav-link'
+                                        className='link'
                                         onClick={signOutUser}
                                     >
                                         Sign Out
                                     </span>
                                 ) : (
-                                    <NavLink className='nav-link' to='/auth'>
+                                    <NavLink className='link' to='/auth'>
                                         Sign In
                                     </NavLink>
                                 )}

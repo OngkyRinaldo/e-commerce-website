@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .banner {
-    @include container;
     padding-bottom: 10rem;
     .banner-container {
         display: flex;
