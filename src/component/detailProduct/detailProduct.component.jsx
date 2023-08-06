@@ -17,6 +17,7 @@ const DetailProduct = () => {
     };
 
     const { addItemToCart } = useContext(CartContext);
+    const addProductToCart = () => addItemToCart(product);
 
     return (
         <>
@@ -52,7 +53,7 @@ const DetailProduct = () => {
                             <div className='atc-buy'>
                                 <button
                                     className='atc-btn'
-                                    onClick={addItemToCart}
+                                    onClick={addProductToCart}
                                 >
                                     add to cart
                                 </button>
