@@ -206,9 +206,6 @@
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
     .container-productDetail {
-        // * {
-        //     border: 1px solid red;
-        // }
         @include mobile;
         .product-container {
             display: block;

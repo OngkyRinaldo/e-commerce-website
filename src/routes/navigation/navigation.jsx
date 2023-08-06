@@ -31,7 +31,7 @@ const Navigation = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink className='link' to='/Categories'>
+                                <NavLink className='link' to='/Categories/all'>
                                     Categories
                                 </NavLink>
                             </li>

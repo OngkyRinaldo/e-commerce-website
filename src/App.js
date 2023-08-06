@@ -6,13 +6,31 @@ import Checkout from './routes/checkout/checkout.component';
 import Categories from './routes/categories/categories.component';
 import DetailProduct from './component/detailProduct/detailProduct.component';
 import NotFound from './component/notfound/notfound.component';
+import AllCategory from './routes/categories/allCategory.component';
+import CategoryFurnitures from './routes/categories/categoryFurnitures.component';
+import CategoryElectronics from './routes/categories/categoryElectronics.component';
+import CategoryLamp from './routes/categories/categoryLamp.component';
+import CategoryKitchen from './routes/categories/categoryKitchen.component';
+import CateogryChairs from './routes/categories/categoryChairs.component';
+import CategorySkinCare from './routes/categories/categorySkinCare.component';
 
 const App = () => {
     return (
         <Routes>
             <Route path='/' element={<Navigation />}>
                 <Route index element={<Home />} />
-                <Route path='categories' element={<Categories />}></Route>
+                <Route path='categories' element={<Categories />}>
+                    <Route path='all' element={<AllCategory />} />
+                    <Route path='furnitures' element={<CategoryFurnitures />} />
+                    <Route path='lamps' element={<CategoryLamp />} />
+                    <Route path='kitchen' element={<CategoryKitchen />} />
+                    <Route path='chairs' element={<CateogryChairs />} />
+                    <Route
+                        path='electronics'
+                        element={<CategoryElectronics />}
+                    />
+                    <Route path='skin-care' element={<CategorySkinCare />} />
+                </Route>
                 <Route
                     path='categories/products/:title'
                     element={<DetailProduct />}
