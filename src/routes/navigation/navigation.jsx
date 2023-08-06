@@ -4,13 +4,10 @@ import './navigation.styles.scss';
 import { useContext, useState } from 'react';
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../component/cart-icon/cart-icon.component';
-import CartDropdown from '../../component/cart-dropdown/cart-dropdown.component';
 import { UserContext } from '../../context/userContext';
-import { CartContext } from '../../context/cartContext';
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
-    const { isCartOpen } = useContext(CartContext);
 
     const [clicked, setClicked] = useState(false);
 
@@ -19,9 +16,16 @@ const Navigation = () => {
         <>
             <header>
                 <nav>
-                    <Link className='logo-container' to='/'>
-                        <img src={Logo} alt='logo' />
-                    </Link>
+                    <div className='nav-icons'>
+                        <Link className='logo-container' to='/'>
+                            <img src={Logo} alt='logo' />
+                        </Link>
+                        <li className='cart-mobile'>
+                            <Link to='/checkout'>
+                                <CartIcon />
+                            </Link>
+                        </li>
+                    </div>
 
                     <div className='nav-links-container'>
                         <ul id='navbar2' className={clicked ? 'activeNav' : ''}>
@@ -49,13 +53,13 @@ const Navigation = () => {
                                     </NavLink>
                                 )}
                             </li>
-                            <li>
-                                <CartIcon />
+                            <li className='cart-desktop'>
+                                <Link to='/checkout'>
+                                    <CartIcon />
+                                </Link>
                             </li>
                         </ul>
                     </div>
-
-                    {isCartOpen && <CartDropdown />}
 
                     <div className='mobile'>
                         <i

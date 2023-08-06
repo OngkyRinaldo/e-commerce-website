@@ -44,8 +44,7 @@ const clearCartItem = (cartItems, cartItemToRemove) =>
 
 export const CartContext = createContext({
     // cartContextStart
-    isCartOpen: false,
-    setIsCartOpen: () => {},
+
     cartItems: [],
     addItemToCart: () => {},
     removeItemToCart: () => {},
@@ -59,7 +58,6 @@ export const CartContext = createContext({
 export const CartProvider = ({ children }) => {
     // cartProviderStart
 
-    const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 
     const addItemToCart = (productToAdd) => {
@@ -97,8 +95,6 @@ export const CartProvider = ({ children }) => {
     // userProviderEnd
 
     const value = {
-        isCartOpen,
-        setIsCartOpen,
         addItemToCart,
         removeItemToCart,
         clearItemToCart,
