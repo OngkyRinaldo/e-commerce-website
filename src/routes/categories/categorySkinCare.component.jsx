@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Products } from '../../data/ProductsData';
+import { ProductsContext } from '../../context/products.context';
 
 const CategorySkinCare = () => {
-    const filteredItems = Products.filter(
+    const { products } = useContext(ProductsContext);
+    const filteredItems = products.filter(
         (item) => item.category === 'skin-care'
     );
     return (

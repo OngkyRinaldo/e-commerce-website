@@ -10,7 +10,7 @@ const Hero = () => {
         <div className='home-container'>
             <div className='grid-container'>
                 <div className='featured grid-one'>
-                    <Link>
+                    <Link to='/categories/all'>
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main1} alt='Main1' />
 
@@ -18,15 +18,15 @@ const Hero = () => {
                     </Link>
                 </div>
                 <div className='featured grid-two'>
-                    <Link>
+                    <Link to='/categories/skin-care'>
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main2} alt='Main2' />
 
-                        <p className='main-description'>Skincare</p>
+                        <p className='main-description'>Skin Care</p>
                     </Link>
                 </div>
                 <div className='featured grid-four'>
-                    <Link>
+                    <Link to='/categories/kitchen'>
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main3} alt='Main3' />
 
@@ -34,7 +34,7 @@ const Hero = () => {
                     </Link>
                 </div>
                 <div className='featured grid-four-low'>
-                    <Link>
+                    <Link to='/categories/electronics'>
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main4} alt='Main4' />
 

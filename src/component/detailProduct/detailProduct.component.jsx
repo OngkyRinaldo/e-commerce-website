@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { Products } from '../../data/ProductsData';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './detailProduct.styles.scss';
 import Trending from '../trending/trending.component';
+import { CartContext } from '../../context/cartContext';
 
 const DetailProduct = () => {
     const { title } = useParams();
@@ -14,6 +15,8 @@ const DetailProduct = () => {
     const changeImage = (e) => {
         setImage(e.target.src);
     };
+
+    const { addItemToCart } = useContext(CartContext);
 
     return (
         <>
@@ -47,7 +50,12 @@ const DetailProduct = () => {
                             <p className='product-spec'>{product.specs}</p>
                             <p className='product-price'> $ {product.price} </p>
                             <div className='atc-buy'>
-                                <button className='atc-btn'>add to cart</button>
+                                <button
+                                    className='atc-btn'
+                                    onClick={addItemToCart}
+                                >
+                                    add to cart
+                                </button>
                                 <button className='buy-btn'>buy now</button>
                             </div>
                         </div>

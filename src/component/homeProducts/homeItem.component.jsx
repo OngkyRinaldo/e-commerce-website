@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Products } from '../../data/ProductsData';
+import { useContext } from 'react';
+import { ProductsContext } from '../../context/products.context';
 
 const HomeItem = () => {
+    const { products } = useContext(ProductsContext);
     return (
         <>
-            {Products.slice(0, 8).map((item) => (
+            {products.slice(0, 8).map((item) => (
                 <div key={item.id} className='product normal'>
                     <Link to={`categories/products/${item.title}`}>
                         <div className='product-header'>

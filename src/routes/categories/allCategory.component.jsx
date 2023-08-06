@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Products } from '../../data/ProductsData';
+import { useContext } from 'react';
+import { ProductsContext } from '../../context/products.context';
 
 const AllCategory = () => {
+    const { products } = useContext(ProductsContext);
     return (
         <>
             <div className='prouducts-container'>
