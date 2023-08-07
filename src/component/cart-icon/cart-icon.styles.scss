@@ -8,16 +8,38 @@
     justify-content: center;
     cursor: pointer;
 
-    .shopping-icon {
+    i {
         width: 24px;
         height: 24px;
     }
 
     .item-count {
         position: absolute;
-        font-size: 10px;
-        font-weight: bold;
-        bottom: 12px;
-        color: red;
+        font-size: 14px;
+        bottom: 30px;
+        left: 30px;
+        color: $white;
+        padding: 3px;
+        background: red;
+        border-radius: 9999px;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .cart-icon-container {
+        i {
+            padding-top: 8px;
+        }
+
+        .item-count {
+            position: absolute;
+            font-size: 14px;
+            bottom: 20px;
+            left: 30px;
+            color: $white;
+            padding: 3px;
+            background: red;
+            border-radius: 9999px;
+        }
     }
 }

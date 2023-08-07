@@ -54,9 +54,15 @@ const Navigation = () => {
                                 )}
                             </li>
                             <li className='cart-desktop'>
-                                <Link to='/checkout'>
-                                    <CartIcon />
-                                </Link>
+                                {currentUser ? (
+                                    <Link to='/checkout'>
+                                        <CartIcon />
+                                    </Link>
+                                ) : (
+                                    <Link to='/auth'>
+                                        <CartIcon />
+                                    </Link>
+                                )}
                             </li>
                         </ul>
                     </div>
