@@ -13,6 +13,10 @@ const Navigation = () => {
 
     const responsiveHandler = () => setClicked(!clicked);
 
+    const test = () => {
+        alert('Access denied, Please log in with your account!');
+    };
+
     return (
         <>
             <header>
@@ -60,7 +64,7 @@ const Navigation = () => {
                                         <CartIcon />
                                     </Link>
                                 ) : (
-                                    <Link to='/auth'>
+                                    <Link to='/auth' onClick={test}>
                                         <CartIcon />
                                     </Link>
                                 )}
