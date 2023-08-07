@@ -15,7 +15,7 @@ const Banner = () => {
                             you can mix and match them freely
                         </p>
 
-                        <Link>
+                        <Link to='/Categories/all'>
                             <button>Shop Now</button>
                         </Link>
                     </div>
