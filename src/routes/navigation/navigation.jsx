@@ -26,9 +26,15 @@ const Navigation = () => {
                             <img src={Logo} alt='logo' />
                         </Link>
                         <li className='cart-mobile'>
-                            <Link to='/checkout'>
-                                <CartIcon />
-                            </Link>
+                            {currentUser ? (
+                                <Link to='/checkout'>
+                                    <CartIcon />
+                                </Link>
+                            ) : (
+                                <Link to='/auth' onClick={test}>
+                                    <CartIcon />
+                                </Link>
+                            )}
                         </li>
                     </div>
 
