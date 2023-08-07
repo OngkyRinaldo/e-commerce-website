@@ -27,23 +27,23 @@ const DetailProduct = () => {
                         <h3 className='product-big-name'>{product.title}</h3>
                         <div className='product-left'>
                             <div className='big-img'>
-                                <img src={image} alt='product' />
+                                <img src={image} alt={`${title}`} />
                             </div>
                             <div className='small-imgs'>
                                 <img
                                     onMouseOver={changeImage}
                                     src={product.img}
-                                    alt='product'
+                                    alt={`${title}`}
                                 />
                                 <img
                                     onMouseOver={changeImage}
                                     src={product.otherImgs[0]}
-                                    alt='product'
+                                    alt={`${title}`}
                                 />
                                 <img
                                     onMouseOver={changeImage}
                                     src={product.otherImgs[1]}
-                                    alt='product'
+                                    alt={`${title}`}
                                 />
                             </div>
                         </div>
