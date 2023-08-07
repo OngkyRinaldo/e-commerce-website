@@ -10,7 +10,12 @@ const Hero = () => {
         <div className='home-container'>
             <div className='grid-container'>
                 <div className='featured grid-one'>
-                    <Link to='/categories/all'>
+                    <Link
+                        to='/categories/all'
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main1} alt='Main1' />
 
@@ -18,7 +23,12 @@ const Hero = () => {
                     </Link>
                 </div>
                 <div className='featured grid-two'>
-                    <Link to='/categories/skin-care'>
+                    <Link
+                        to='/categories/skin-care'
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main2} alt='Main2' />
 
@@ -26,7 +36,12 @@ const Hero = () => {
                     </Link>
                 </div>
                 <div className='featured grid-four'>
-                    <Link to='/categories/kitchen'>
+                    <Link
+                        to='/categories/kitchen'
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main3} alt='Main3' />
 
@@ -34,7 +49,12 @@ const Hero = () => {
                     </Link>
                 </div>
                 <div className='featured grid-four-low'>
-                    <Link to='/categories/electronics'>
+                    <Link
+                        to='/categories/electronics'
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div id='img1' className='lil-overlay'></div>
                         <img src={Main4} alt='Main4' />
 

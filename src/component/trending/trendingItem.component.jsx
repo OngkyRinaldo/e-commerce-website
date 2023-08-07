@@ -8,7 +8,12 @@ const TrendingItem = () => {
         <>
             {products.slice(9, 16).map((item) => (
                 <div key={item.id} className='row-item'>
-                    <Link to={`/categories/products/${item.title}`}>
+                    <Link
+                        to={`/categories/products/${item.title}`}
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div className='item-header'>
                             <img src={item.img} alt='products' />
                         </div>

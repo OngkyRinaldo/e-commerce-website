@@ -15,7 +15,12 @@ const Banner = () => {
                             you can mix and match them freely
                         </p>
 
-                        <Link to='/Categories/all'>
+                        <Link
+                            to='/Categories/all'
+                            onClick={() => {
+                                window.scrollTo(0, 0);
+                            }}
+                        >
                             <button>Shop Now</button>
                         </Link>
                     </div>

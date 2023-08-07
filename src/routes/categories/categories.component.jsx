@@ -4,10 +4,10 @@ import './categories.styles.scss';
 
 const Categories = () => {
     return (
-        <>
+        <main>
             <CategoriesHeader />
             <Outlet />
-        </>
+        </main>
     );
 };
 

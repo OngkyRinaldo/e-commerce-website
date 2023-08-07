@@ -8,7 +8,12 @@ const HomeItem = () => {
         <>
             {products.slice(0, 8).map((item) => (
                 <div key={item.id} className='product normal'>
-                    <Link to={`categories/products/${item.title}`}>
+                    <Link
+                        to={`categories/products/${item.title}`}
+                        onClick={() => {
+                            window.scrollTo(0, 0);
+                        }}
+                    >
                         <div className='product-header'>
                             <img src={item.img} alt='products' />
                         </div>
