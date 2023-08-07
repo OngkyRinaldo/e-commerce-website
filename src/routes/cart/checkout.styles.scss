@@ -1,0 +1,225 @@
+@import '../../styles//variables';
+
+.checkout-container {
+    @include container;
+    min-height: 100vh;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    table {
+        width: 100%;
+
+        thead {
+            tr {
+                th {
+                    border-bottom: 1px solid #808080;
+                    padding: 1rem 2rem;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    border-bottom: 1px solid #808080;
+                    padding: 0 2rem;
+                }
+                .table-number {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+                .table-image {
+                    width: 25%;
+                    img {
+                        width: 100%;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+
+                .table-title {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                .table-quantity {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-align: center;
+
+                    .quantity-arrow {
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    .total-quantity {
+                        border: none;
+                    }
+                }
+
+                .table-price {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+                .table-remove {
+                    font-size: 22px;
+                    font-weight: 600;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .total {
+        margin-top: 5rem;
+        align-self: flex-end;
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 765px) {
+    .checkout-container {
+        @include mobile;
+        table {
+            thead {
+                tr {
+                    th {
+                        border-bottom: 1px solid #808080;
+                        padding: 0;
+                        font-size: 11px;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        border-bottom: 1px solid #808080;
+                        padding: 0;
+                    }
+                    .table-number {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    .table-image {
+                        width: 25%;
+                        img {
+                            width: 100%;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    .table-title {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+                    .table-quantity {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+
+                        .quantity-arrow {
+                            border: none;
+                            cursor: pointer;
+                        }
+
+                        .total-quantity {
+                            border: none;
+                            padding: 0 8px;
+                        }
+                    }
+
+                    .table-price {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    .table-remove {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 765px) and (max-width: 1114px) {
+    .checkout-container {
+        @include container;
+        table {
+            thead {
+                tr {
+                    th {
+                        border-bottom: 1px solid #808080;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        border-bottom: 1px solid #808080;
+                        padding: 0;
+                    }
+                    .table-number {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    .table-image {
+                        width: 25%;
+                        img {
+                            width: 100%;
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    .table-title {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+
+                    .table-quantity {
+                        display: flex;
+                        justify-content: space-evenly;
+                        padding: 3rem 0;
+
+                        .quantity-arrow {
+                            border: none;
+                            cursor: pointer;
+                        }
+
+                        .total-quantity {
+                            border: none;
+                        }
+                    }
+                    .table-price {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                    }
+                    .table-remove {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
