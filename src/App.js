@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './routes/home/home';
 import Navigation from './routes/navigation/navigation';
 import Authentication from './routes/authentication/authentication';
-import Checkout from './routes/checkout/checkout.component';
 import Categories from './routes/categories/categories.component';
 import DetailProduct from './component/detailProduct/detailProduct.component';
 import NotFound from './component/notfound/notfound.component';
@@ -13,6 +12,7 @@ import CategoryLamp from './routes/categories/categoryLamp.component';
 import CategoryKitchen from './routes/categories/categoryKitchen.component';
 import CateogryChairs from './routes/categories/categoryChairs.component';
 import CategorySkinCare from './routes/categories/categorySkinCare.component';
+import Cart from './routes/cart/cart.component';
 
 const App = () => {
     return (
@@ -36,7 +36,7 @@ const App = () => {
                     element={<DetailProduct />}
                 />
                 <Route path='auth' element={<Authentication />} />
-                <Route path='checkout' element={<Checkout />} />
+                <Route path='checkout' element={<Cart />} />
                 <Route path='*' element={<NotFound />} />
             </Route>
         </Routes>
