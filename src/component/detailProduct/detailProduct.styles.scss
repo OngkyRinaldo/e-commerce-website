@@ -123,7 +123,7 @@
         justify-content: space-between;
         width: 100%;
         padding: 10px 20px;
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
 
         .spec {
             background-color: #e5e5e5;
@@ -209,6 +209,7 @@
         @include mobile;
         .product-container {
             display: block;
+            padding: 0 10px;
 
             .product-big-name {
                 position: relative;
@@ -220,10 +221,11 @@
                 padding-top: 1rem;
 
                 .big-img {
-                    height: 300px;
-
                     img {
-                        width: 100%;
+                        width: 75%;
+                        display: block;
+                        margin: 0 auto;
+                        padding: 0 20px;
                     }
                 }
 

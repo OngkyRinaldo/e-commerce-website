@@ -13,33 +13,43 @@ import CategoryKitchen from './routes/categories/categoryKitchen.component';
 import CateogryChairs from './routes/categories/categoryChairs.component';
 import CategorySkinCare from './routes/categories/categorySkinCare.component';
 import Cart from './routes/cart/cart.component';
+import Footer from './component/footer/footer.component';
 
 const App = () => {
     return (
-        <Routes>
-            <Route path='/' element={<Navigation />}>
-                <Route index element={<Home />} />
-                <Route path='categories' element={<Categories />}>
-                    <Route path='all' element={<AllCategory />} />
-                    <Route path='furnitures' element={<CategoryFurnitures />} />
-                    <Route path='lamps' element={<CategoryLamp />} />
-                    <Route path='kitchen' element={<CategoryKitchen />} />
-                    <Route path='chairs' element={<CateogryChairs />} />
+        <>
+            <Routes>
+                <Route path='/' element={<Navigation />}>
+                    <Route index element={<Home />} />
+                    <Route path='categories' element={<Categories />}>
+                        <Route path='all' element={<AllCategory />} />
+                        <Route
+                            path='furnitures'
+                            element={<CategoryFurnitures />}
+                        />
+                        <Route path='lamps' element={<CategoryLamp />} />
+                        <Route path='kitchen' element={<CategoryKitchen />} />
+                        <Route path='chairs' element={<CateogryChairs />} />
+                        <Route
+                            path='electronics'
+                            element={<CategoryElectronics />}
+                        />
+                        <Route
+                            path='skin-care'
+                            element={<CategorySkinCare />}
+                        />
+                    </Route>
                     <Route
-                        path='electronics'
-                        element={<CategoryElectronics />}
+                        path='categories/products/:title'
+                        element={<DetailProduct />}
                     />
-                    <Route path='skin-care' element={<CategorySkinCare />} />
+                    <Route path='auth' element={<Authentication />} />
+                    <Route path='checkout' element={<Cart />} />
+                    <Route path='*' element={<NotFound />} />
                 </Route>
-                <Route
-                    path='categories/products/:title'
-                    element={<DetailProduct />}
-                />
-                <Route path='auth' element={<Authentication />} />
-                <Route path='checkout' element={<Cart />} />
-                <Route path='*' element={<NotFound />} />
-            </Route>
-        </Routes>
+            </Routes>
+            <Footer />
+        </>
     );
 };
 

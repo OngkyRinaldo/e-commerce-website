@@ -121,14 +121,18 @@
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 750px) {
-    .text-side {
-        padding: 0 4rem;
+@media only screen and (min-width: 600px) and (max-width: 1114px) {
+    .banner {
+        padding-bottom: 5rem;
+        .text-side {
+            padding: 0 4rem;
+        }
     }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 600px) {
     .banner {
+        padding-bottom: 5rem;
         @include mobile;
         .banner-container {
             .text-side {

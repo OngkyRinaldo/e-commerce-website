@@ -104,6 +104,8 @@
     .prouducts-container {
         @include mobile;
 
+        padding: 3rem 20px;
+
         .products-grid {
             grid-template-columns: 1fr;
         }
@@ -116,6 +118,7 @@
     }
     .prouducts-container {
         @include mobile;
+        padding: 3rem 20px;
 
         .products-grid {
             grid-template-columns: 1fr 1fr;
@@ -125,6 +128,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1114px) {
     .prouducts-container {
         @include mobile;
+        padding: 3rem 20px;
 
         .products-grid {
             grid-template-columns: 1fr 1fr 1fr;
