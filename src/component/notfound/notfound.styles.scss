@@ -2,9 +2,11 @@
 
 .container-not-found {
     @include container;
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
 
     background: #808080;
-    margin-top: 5rem;
+
     .found-text {
         text-align: center;
         padding: 10rem 0;

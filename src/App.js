@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './routes/home/home';
 import Navigation from './routes/navigation/navigation';
 import Authentication from './routes/authentication/authentication';
@@ -14,8 +14,11 @@ import CateogryChairs from './routes/categories/categoryChairs.component';
 import CategorySkinCare from './routes/categories/categorySkinCare.component';
 import Cart from './routes/cart/cart.component';
 import Footer from './component/footer/footer.component';
+import { useContext } from 'react';
+import { UserContext } from './context/userContext';
 
 const App = () => {
+    const { currentUser } = useContext(UserContext);
     return (
         <>
             <Routes>
@@ -43,7 +46,12 @@ const App = () => {
                         path='categories/products/:title'
                         element={<DetailProduct />}
                     />
-                    <Route path='auth' element={<Authentication />} />
+                    {!currentUser ? (
+                        <Route path='auth' element={<Authentication />} />
+                    ) : (
+                        <Route path='auth' element={<Home />} />
+                    )}
+
                     <Route path='checkout' element={<Cart />} />
                     <Route path='*' element={<NotFound />} />
                 </Route>
