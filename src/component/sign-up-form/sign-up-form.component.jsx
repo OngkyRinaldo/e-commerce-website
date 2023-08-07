@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import FormInput from '../form-input/form-input.component';
-import './sign-up-form.styles.scss';
 import {
     createAuthUserWithEmailAndPassword,
     createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
-import Button from '../button/button.component';
 
 const defaultFormFields = {
     displayName: '',
@@ -104,7 +102,9 @@ const SignUpForm = () => {
                     }}
                 />
 
-                <Button type='submit'>Sign Up</Button>
+                <button className='btn-signUp' type='submit'>
+                    Sign Up
+                </button>
             </form>
         </div>
     );

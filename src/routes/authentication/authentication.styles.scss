@@ -1,6 +1,119 @@
-section {
+@import '../../styles/variables';
+
+.authentication-container {
+    @include container;
     display: flex;
     justify-content: space-between;
     width: 900px;
     margin: 30px auto;
+    min-height: 100vh;
+
+    .sign-in-container {
+        display: flex;
+        flex-direction: column;
+        width: 380px;
+
+        h2 {
+            margin: 10px 0;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 1rem;
+
+            .btn-signIn {
+                width: 100%;
+                padding: 20px 0;
+                color: $white;
+                background: #000;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                border: 1px solid #fff;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    border: 1px solid black;
+                }
+            }
+            .btn-google {
+                width: 100%;
+                padding: 20px 0;
+                color: $white;
+                background: #4285f4;
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: #357ae8;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .sign-up-container {
+        display: flex;
+        flex-direction: column;
+        width: 380px;
+
+        h2 {
+            margin: 10px 0;
+        }
+
+        .btn-signUp {
+            width: 100%;
+            padding: 20px 0;
+            color: $white;
+            background: #000;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #fff;
+
+            &:hover {
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1114px) {
+    .authentication-container {
+        @include mobile;
+        padding: 0;
+        display: block;
+        text-align: center;
+
+        .sign-in-container {
+            padding: 0 15px;
+            width: 75%;
+            margin: 3rem auto;
+            .buttons-container {
+                .btn-signIn {
+                    padding: 15px 0;
+                    font-size: 1rem;
+                }
+
+                .btn-google {
+                    padding: 15px 0;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .sign-up-container {
+            padding: 0 15px;
+            width: 75%;
+            margin: 3rem auto;
+            cursor: pointer;
+        }
+    }
 }

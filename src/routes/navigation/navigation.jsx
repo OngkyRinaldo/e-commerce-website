@@ -12,6 +12,7 @@ const Navigation = () => {
     const [clicked, setClicked] = useState(false);
 
     const responsiveHandler = () => setClicked(!clicked);
+
     return (
         <>
             <header>
