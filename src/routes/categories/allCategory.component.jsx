@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom';
-import { Products } from '../../data/ProductsData';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../../context/products.context';
 
 const AllCategory = () => {
     const { products } = useContext(ProductsContext);
+    useEffect(() => {
+        document.title = 'Furniture Ecommerce - All Furniture ';
+    }, []);
     return (
         <>
             <div className='prouducts-container'>
                 <div className='products-grid'>
-                    {Products.map((item) => (
+                    {products.map((item) => (
                         <div key={item.id} className='product'>
                             <Link to={`/categories/products/${item.title}`}>
                                 <div className='product-header'>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ProductsContext } from '../../context/products.context';
 
@@ -7,6 +7,9 @@ const CategorySkinCare = () => {
     const filteredItems = products.filter(
         (item) => item.category === 'skin-care'
     );
+    useEffect(() => {
+        document.title = 'Furniture Ecommerce - Skin Care ';
+    }, []);
     return (
         <>
             <div className='prouducts-container'>

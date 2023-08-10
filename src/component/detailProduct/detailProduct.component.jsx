@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { Products } from '../../data/ProductsData';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './detailProduct.styles.scss';
 import Trending from '../trending/trending.component';
 import { CartContext } from '../../context/cartContext';
@@ -18,6 +18,10 @@ const DetailProduct = () => {
 
     const { addItemToCart } = useContext(CartContext);
     const addProductToCart = () => addItemToCart(product);
+
+    useEffect(() => {
+        document.title = `Furniture Ecommerce - ${product.title}`;
+    }, [product.title]);
 
     return (
         <>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ProductsContext } from '../../context/products.context';
 
 const CategoryFurnitures = () => {
@@ -7,6 +7,10 @@ const CategoryFurnitures = () => {
     const filteredItems = products.filter(
         (item) => item.category === 'furniture'
     );
+
+    useEffect(() => {
+        document.title = 'Furniture Ecommerce - Furnitures ';
+    }, []);
     return (
         <>
             <div className='prouducts-container'>

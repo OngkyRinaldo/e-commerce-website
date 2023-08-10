@@ -1,10 +1,13 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import './checkout.styles.scss';
 import { CartContext } from '../../context/cartContext';
 import CartItem from '../../component/cart-item/cart-item.component';
 
 const Cart = () => {
     const { cartItems, cartTotal } = useContext(CartContext);
+    useEffect(() => {
+        document.title = 'Furniture Ecommerce - Cart ';
+    }, []);
     return (
         <div className='checkout-container'>
             <table>
