@@ -16,7 +16,7 @@ const Navigation = () => {
     return (
         <>
             <header>
-                {/* <nav>
+                <nav>
                     <div className='nav-icons'>
                         <Link className='logo-container' to='/'>
                             <img src={Logo} alt='logo' />
@@ -81,7 +81,7 @@ const Navigation = () => {
                             onClick={responsiveHandler}
                         ></i>
                     </div>
-                </nav> */}
+                </nav>
             </header>
             <Outlet />
         </>
